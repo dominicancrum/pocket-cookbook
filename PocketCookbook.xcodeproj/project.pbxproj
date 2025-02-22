@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B67742102D63C01100005E70 /* Recipes in Frameworks */ = {isa = PBXBuildFile; productRef = B677420F2D63C01100005E70 /* Recipes */; };
+		B67742142D63C1F900005E70 /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = B67742132D63C1F900005E70 /* NetworkKit */; };
+		B67742512D67C11400005E70 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = B67742502D67C11400005E70 /* Utilities */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B67741D52D54916B00005E70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +33,9 @@
 		B67741C42D54916900005E70 /* PocketCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67741D42D54916B00005E70 /* PocketCookbookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketCookbookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67741DE2D54916B00005E70 /* PocketCookbookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketCookbookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B677420D2D63BFC900005E70 /* Recipes */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Recipes; sourceTree = "<group>"; };
+		B67742112D63C19000005E70 /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
+		B677424E2D67C09900005E70 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utilities; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67742142D63C1F900005E70 /* NetworkKit in Frameworks */,
+				B67742512D67C11400005E70 /* Utilities in Frameworks */,
+				B67742102D63C01100005E70 /* Recipes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +87,9 @@
 		B67741BB2D54916900005E70 = {
 			isa = PBXGroup;
 			children = (
+				B677424E2D67C09900005E70 /* Utilities */,
+				B67742112D63C19000005E70 /* NetworkKit */,
+				B677420D2D63BFC900005E70 /* Recipes */,
 				B67741C62D54916900005E70 /* PocketCookbook */,
 				B67741D72D54916B00005E70 /* PocketCookbookTests */,
 				B67741E12D54916B00005E70 /* PocketCookbookUITests */,
@@ -112,6 +127,9 @@
 			);
 			name = PocketCookbook;
 			packageProductDependencies = (
+				B677420F2D63C01100005E70 /* Recipes */,
+				B67742132D63C1F900005E70 /* NetworkKit */,
+				B67742502D67C11400005E70 /* Utilities */,
 			);
 			productName = PocketCookbook;
 			productReference = B67741C42D54916900005E70 /* PocketCookbook.app */;
@@ -195,6 +213,11 @@
 			);
 			mainGroup = B67741BB2D54916900005E70;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B677420E2D63C01100005E70 /* XCLocalSwiftPackageReference "Recipes" */,
+				B67742122D63C1F900005E70 /* XCLocalSwiftPackageReference "NetworkKit" */,
+				B677424F2D67C11400005E70 /* XCLocalSwiftPackageReference "Utilities" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B67741C52D54916900005E70 /* Products */;
 			projectDirPath = "";
@@ -558,6 +581,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B677420E2D63C01100005E70 /* XCLocalSwiftPackageReference "Recipes" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Recipes;
+		};
+		B67742122D63C1F900005E70 /* XCLocalSwiftPackageReference "NetworkKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = NetworkKit;
+		};
+		B677424F2D67C11400005E70 /* XCLocalSwiftPackageReference "Utilities" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Utilities;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B677420F2D63C01100005E70 /* Recipes */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Recipes;
+		};
+		B67742132D63C1F900005E70 /* NetworkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkKit;
+		};
+		B67742502D67C11400005E70 /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utilities;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B67741BC2D54916900005E70 /* Project object */;
 }
