@@ -14,6 +14,7 @@ import Utilities
 public struct RecipeList: View {
   // MARK: - Instance Properties
   @State private var viewModel: RecipeListViewModel
+  @State private var isRecipeSourceSheetPresented: Bool = false
   
   // MARK: - Intialization
   
@@ -41,6 +42,30 @@ public struct RecipeList: View {
         }
       }
       .navigationBarTitle("Pocket Cookbook")
+#if DEBUG
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button {
+            isRecipeSourceSheetPresented = true
+          } label: {
+            Image(systemName: "wrench.and.screwdriver.fill")
+          }
+        }
+      }
+      .confirmationDialog("Toggle Recipe Source?", isPresented: $isRecipeSourceSheetPresented, titleVisibility: .visible) {
+        Button(RemoteRecipeSource.default.rawValue) {
+          viewModel.updateRemoteRecipeSource(to: .default)
+        }
+        
+        Button(RemoteRecipeSource.empty.rawValue) {
+          viewModel.updateRemoteRecipeSource(to: .empty)
+        }
+        
+        Button(RemoteRecipeSource.malformedRecipes.rawValue) {
+          viewModel.updateRemoteRecipeSource(to: .malformedRecipes)
+        }
+      }
+#endif
     }
     .task {
       try? await Task.sleep(for: .seconds(1))

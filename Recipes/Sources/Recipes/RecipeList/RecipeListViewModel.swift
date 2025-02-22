@@ -19,7 +19,7 @@ import Utilities
 
   // MARK: Private Properties
 
-  private let recipeProvider: any RecipeSource
+  private var recipeProvider: any RecipeSource
   private let imageLoader: any ImageSource
   
   // MARK: - Initialization
@@ -70,4 +70,13 @@ import Utilities
     
     return try await imageLoader.image(for: recipePhotoURL)
   }
+  
+#if DEBUG
+  public func updateRemoteRecipeSource(to remoteSource: RemoteRecipeSource) {
+    recipeProvider = DefaultRecipeSource(remoteSource: remoteSource)
+    Task {
+      await reloadRequested()
+    }
+  }
+#endif
 }

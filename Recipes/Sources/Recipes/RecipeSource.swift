@@ -16,11 +16,30 @@ public protocol RecipeSource: Sendable {
   func fetchRecipes() async -> Result<[Recipe], any Error>
 }
 
+/// Represents the possible remote sources of recipes.
+public enum RemoteRecipeSource: String, Sendable {
+  case `default` = "Default Source"
+  case empty = "Empty Source"
+  case malformedRecipes = "Malformed Data Source"
+  
+  var networkRequest: NetworkRequest<RecipeResponse>? {
+    switch self {
+    case .default: .fetchRecipes()
+    case .empty: .fetchEmptyRecipes()
+    case .malformedRecipes: .fetchMalformedRecipes()
+    }
+  }
+}
+
 public struct DefaultRecipeSource: RecipeSource {
-  public init() {}
+  private let remoteSource: RemoteRecipeSource
+  
+  public init(remoteSource: RemoteRecipeSource = .default) {
+    self.remoteSource = remoteSource
+  }
 
   public func fetchRecipes() async -> Result<[Recipe], any Error> {
-    guard let recipeRequest: NetworkRequest<RecipeResponse> = .fetchRecipes() else {
+    guard let recipeRequest: NetworkRequest<RecipeResponse> = remoteSource.networkRequest else {
       return .failure(RecipeFetchError.requestCreationFailed)
     }
     
@@ -39,6 +58,5 @@ public struct DefaultRecipeSource: RecipeSource {
 public extension DefaultRecipeSource {
   enum RecipeFetchError: Error {
     case requestCreationFailed
-    
   }
 }
