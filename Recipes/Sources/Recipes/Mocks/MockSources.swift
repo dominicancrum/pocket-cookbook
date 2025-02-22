@@ -55,7 +55,7 @@ enum MockRecipes {
       name: "Candied Yams",
       cuisine: "Soul Food",
       largePhotoUrl: nil,
-      smallPhotoUrl: nil,
+      smallPhotoUrl: Bundle.module.url(forResource: "candied-yams", withExtension: "jpg"),
       uuid: UUID(),
       sourceURL: nil,
       youtubeURL: nil
@@ -64,7 +64,7 @@ enum MockRecipes {
       name: "Banana Pancakes",
       cuisine: "American",
       largePhotoUrl: URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b6efe075-6982-4579-b8cf-013d2d1a461b/large.jpg")!,
-      smallPhotoUrl: URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b6efe075-6982-4579-b8cf-013d2d1a461b/small.jpg")!,
+      smallPhotoUrl: Bundle.module.url(forResource: "banana-pancakes", withExtension: "jpg"),
       uuid: UUID(),
       sourceURL: URL(string: "https://www.bbcgoodfood.com/recipes/banana-pancakes")!,
       youtubeURL: URL(string: "https://www.youtube.com/watch?v=kSKtb2Sv-_U")!

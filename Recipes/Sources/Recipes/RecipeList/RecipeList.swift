@@ -148,6 +148,11 @@ extension RecipeList {
   }
 }
 
-//#Preview {
-//  RecipeList()
-//}
+#Preview {
+  RecipeList(
+    viewModel: RecipeListViewModel(
+      recipeProvider: MockRecipeProvider(variant: .recipes),
+      imageLoader: MockImageProvider()
+    )
+  )
+}
