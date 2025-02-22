@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B620DA9E2D6961E70069689D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B67741C42D54916900005E70 /* PocketCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67741D42D54916B00005E70 /* PocketCookbookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketCookbookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67741DE2D54916B00005E70 /* PocketCookbookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketCookbookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +88,7 @@
 		B67741BB2D54916900005E70 = {
 			isa = PBXGroup;
 			children = (
+				B620DA9E2D6961E70069689D /* README.md */,
 				B677424E2D67C09900005E70 /* Utilities */,
 				B67742112D63C19000005E70 /* NetworkKit */,
 				B677420D2D63BFC900005E70 /* Recipes */,
