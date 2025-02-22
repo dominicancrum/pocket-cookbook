@@ -100,14 +100,20 @@ extension RecipeList {
     // MARK: - View Layout
     
     var body: some View {
-      HStack {
+      HStack(spacing: 16) {
         Rectangle()
           .fill(Color.gray)
           .frame(width: 50, height: 50)
           .overlay {
             recipeImageView
           }
-        Text(recipe.name)
+        VStack(alignment: .leading) {
+          Text(recipe.name)
+            .font(.title3)
+            .bold()
+          Text(recipe.cuisine)
+            .font(.body)
+        }
       }
       .task {
         recipePic = await getRecipeImage()
