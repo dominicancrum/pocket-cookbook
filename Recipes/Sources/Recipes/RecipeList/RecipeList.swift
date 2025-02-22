@@ -151,8 +151,8 @@ extension RecipeList {
 #Preview {
   RecipeList(
     viewModel: RecipeListViewModel(
-      recipeProvider: MockRecipeProvider(variant: .recipes),
-      imageLoader: MockImageProvider()
+      recipeSource: MockRecipeProvider(variant: .recipes),
+      imageSource: MockImageProvider()
     )
   )
 }

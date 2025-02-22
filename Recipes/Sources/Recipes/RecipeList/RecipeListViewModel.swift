@@ -19,17 +19,17 @@ import Utilities
 
   // MARK: Private Properties
 
-  private var recipeProvider: any RecipeSource
-  private let imageLoader: any ImageSource
+  private var recipeSource: any RecipeSource
+  private let imageSource: any ImageSource
   
   // MARK: - Initialization
   
   public init(
-    recipeProvider: any RecipeSource = DefaultRecipeSource(),
-    imageLoader: any ImageSource = DefaultImageSource.shared
+    recipeSource: any RecipeSource = DefaultRecipeSource(),
+    imageSource: any ImageSource = DefaultImageSource.shared
   ) {
-    self.recipeProvider = recipeProvider
-    self.imageLoader = imageLoader
+    self.recipeSource = recipeSource
+    self.imageSource = imageSource
   }
   
   // MARK: - Instance Methods
@@ -37,7 +37,7 @@ import Utilities
   /// Informs the view model the associate list will be displayed. This will trigger
   /// an attempt to load any available recipes.
   public func listWillAppear() async {
-    let recipes = await recipeProvider.fetchRecipes()
+    let recipes = await recipeSource.fetchRecipes()
     let updatedState: Fetchable<[Recipe]> = switch recipes {
     case .success(let value):
       .fetched(value)
@@ -68,12 +68,12 @@ import Utilities
       return nil
     }
     
-    return try await imageLoader.image(for: recipePhotoURL)
+    return try await imageSource.image(for: recipePhotoURL)
   }
   
 #if DEBUG
   public func updateRemoteRecipeSource(to remoteSource: RemoteRecipeSource) {
-    recipeProvider = DefaultRecipeSource(remoteSource: remoteSource)
+    recipeSource = DefaultRecipeSource(remoteSource: remoteSource)
     Task {
       await reloadRequested()
     }
