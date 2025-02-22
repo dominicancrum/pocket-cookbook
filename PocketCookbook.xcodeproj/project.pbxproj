@@ -40,6 +40,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		B620DA9F2D697EFE0069689D /* Screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		B67741C62D54916900005E70 /* PocketCookbook */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = PocketCookbook;
@@ -96,6 +101,7 @@
 				B67741D72D54916B00005E70 /* PocketCookbookTests */,
 				B67741E12D54916B00005E70 /* PocketCookbookUITests */,
 				B67741C52D54916900005E70 /* Products */,
+				B620DA9F2D697EFE0069689D /* Screenshots */,
 			);
 			sourceTree = "<group>";
 		};

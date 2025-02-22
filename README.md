@@ -1,6 +1,6 @@
 #  PocketCookbook
 
-### Summary: Include screen shots or a video of your app highlighting its features
+### Summary:
 My take on this project is a single view displaying a list of recipes, including their names, the cuisine they belong
 to, and an image of the recipe. Users can pull to refresh the list of recipes and in debug builds, it also includes a 
 button allowing users to change the recipe endpoint they can make requests against.
@@ -8,7 +8,20 @@ button allowing users to change the recipe endpoint they can make requests again
 The single view is implemented with a relatively lightweight MVVM approach, with the view model interacting with the
 model layer to fetch recipes and their images.
 
-### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
+### Screenshots
+#### Recipe List
+![Recipe List Pic](/Screenshots/recipe-list.png?raw=true "Recipe List")
+
+#### Source Picker
+![Source Picker Pic](/Screenshots/source-picker.png?raw=true "Source Picker")
+
+#### Empty View
+![Empty-View Pic](/Screenshots/empty-view.png?raw=true "Empty View")
+
+#### Error View
+![Error View Pic](/Screenshots/error-view.png?raw=true "Error View")
+
+### Focus Areas:
 
 Given that fetching and displaying images was a part of the requirements, one area in particular I prioritized was
 the image loading functionality. This functionality presented several interesting problems to consider, such as:
@@ -19,7 +32,7 @@ the image loading functionality. This functionality presented several interestin
 Given that the answers to these and other considerations would likely have impacts throughout the project, I thought
 it'd be ideal to focus my attention on these considerations.
 
-### Time Spent: Approximately how long did you spend working on this project? How did you allocate your time?
+### Time Spent:
 
 I worked on-and off over the course of two weeks, but wasn't really able to dedicate large chunks of time to this project 
 until the last week. I initially allocated my time towards high level planning for how the project would be organized. 
@@ -29,7 +42,7 @@ requirements.
 Finally, I spent a significant amount of time refactoring the initial implementation, adding tests and generally polishing
 as much as I could.
 
-### Trade-offs and Decisions: Did you make any significant trade-offs in your approach?
+### Trade-offs and Decisions:
 
 The project splits up its code amongst several local packages based on functionality (e.g. networking helpers and logic
 in the NetworkKit package, the implementation of the recipe list UI in the Recipes package). Modularizing code into
@@ -41,7 +54,7 @@ using local packages allows us to be more explicit about which types to expose t
 are only relevant to a given feature (e.g. does a basic network helper type need to have any knowledge of recipes, or
 how recipes are presented?).
 
-### Weakest Part of the Project: What do you think is the weakest part of your project?
+### Weakest Part of the Project:
 
 I believe there's more UI polish that could be added to the project.
 
