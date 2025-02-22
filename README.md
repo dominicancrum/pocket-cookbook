@@ -9,17 +9,9 @@ The single view is implemented with a relatively lightweight MVVM approach, with
 model layer to fetch recipes and their images.
 
 ### Screenshots
-#### Recipe List
-![Recipe List Pic](/Screenshots/recipe-list.png?raw=true "Recipe List")
-
-#### Source Picker
-![Source Picker Pic](/Screenshots/source-picker.png?raw=true "Source Picker")
-
-#### Empty View
-![Empty-View Pic](/Screenshots/empty-view.png?raw=true "Empty View")
-
-#### Error View
-![Error View Pic](/Screenshots/error-view.png?raw=true "Error View")
+| Recipe List  | Source Picker  | Empty View  | Error View  |
+|---|---|---|---|
+| ![Recipe List Pic](/Screenshots/recipe-list.png?raw=true "Recipe List")  | ![Source Picker Pic](/Screenshots/source-picker.png?raw=true "Source Picker")  | ![Empty-View Pic](/Screenshots/empty-view.png?raw=true "Empty View")  | ![Error View Pic](/Screenshots/error-view.png?raw=true "Error View")  |
 
 ### Focus Areas:
 
