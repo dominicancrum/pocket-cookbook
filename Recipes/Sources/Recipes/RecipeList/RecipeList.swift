@@ -33,11 +33,15 @@ public struct RecipeList: View {
         case .fetched(let recipes):
           viewForFetchedRecipes(recipes)
         case .failed:
-          HStack {
-            Image(systemName: "exclamationmark.triangle")
+          VStack(spacing: 12) {
+            Image(systemName: "exclamationmark.triangle.fill")
               .resizable()
-              .frame(width: 20, height: 20)
+              .frame(width: 40, height: 40)
+              .foregroundStyle(Color.red)
             Text("There was a problem fetching the recipes")
+              .font(.title2)
+              .bold()
+              .multilineTextAlignment(.center)
           }
         }
       }
@@ -76,6 +80,8 @@ public struct RecipeList: View {
   @ViewBuilder private func viewForFetchedRecipes(_ recipes: [Recipe]) -> some View {
     if recipes.isEmpty {
       Text("No recipes available 😔")
+        .font(.title2)
+        .bold()
     } else {
       List(recipes) { recipe in
         Cell(recipe: recipe, fetchRecipeImage: viewModel.loadImage(for:))
